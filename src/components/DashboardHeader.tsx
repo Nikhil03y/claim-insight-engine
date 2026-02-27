@@ -17,7 +17,7 @@ export function DashboardHeader({ onRefresh }: DashboardHeaderProps) {
           <ShieldCheck className="w-7 h-7 text-primary" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-foreground tracking-tight">Fraud Detection Agent</h1>
+          <h1 className="text-xl font-bold text-foreground tracking-tight">Fraud Detection Agent - India</h1>
           <p className="text-xs text-muted-foreground">Insurance Claims Risk Analysis Dashboard</p>
         </div>
       </div>

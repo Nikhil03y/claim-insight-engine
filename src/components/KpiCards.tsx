@@ -13,7 +13,7 @@ const cards = [
   { key: "total", label: "Total Claims", icon: FileSearch, format: (v: number) => v.toLocaleString() },
   { key: "flagged", label: "High Risk Flagged", icon: ShieldAlert, format: (v: number) => v.toLocaleString(), accent: "risk-high" },
   { key: "avgRisk", label: "Avg Risk Score", icon: TrendingUp, format: (v: number) => `${v}/100` },
-  { key: "totalExposure", label: "Risk Exposure", icon: DollarSign, format: (v: number) => `$${(v / 1000000).toFixed(2)}M` },
+  { key: "totalExposure", label: "Risk Exposure", icon: DollarSign, format: (v: number) => `₹${(v / 10000000).toFixed(2)}Cr` },
 ] as const;
 
 export function KpiCards({ total, flagged, avgRisk, totalExposure }: KpiCardsProps) {

@@ -122,7 +122,7 @@ export function ClaimsTable({ claims, onSelectClaim }: ClaimsTableProps) {
                 <td className="py-3 px-3 font-mono text-xs text-primary">{claim.claimNumber}</td>
                 <td className="py-3 px-3 text-foreground font-medium">{claim.policyHolder}</td>
                 <td className="py-3 px-3 text-muted-foreground">{claim.type}</td>
-                <td className="py-3 px-3 text-right font-mono text-foreground">${claim.amount.toLocaleString()}</td>
+                <td className="py-3 px-3 text-right font-mono text-foreground">₹{claim.amount.toLocaleString('en-IN')}</td>
                 <td className="py-3 px-3 text-muted-foreground">{claim.filingDate}</td>
                 <td className="py-3 px-3 text-center">
                   <span className={`inline-flex items-center justify-center w-10 h-6 rounded text-xs font-mono font-bold ${
