@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp, Search, Filter } from "lucide-react";
 import type { Claim, RiskLevel, ClaimType } from "@/lib/mockData";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface ClaimsTableProps {
   claims: Claim[];
@@ -66,28 +67,30 @@ export function ClaimsTable({ claims, onSelectClaim }: ClaimsTableProps) {
         </div>
         <div className="flex gap-2 items-center">
           <Filter className="w-4 h-4 text-muted-foreground" />
-          <select
-            value={riskFilter}
-            onChange={(e) => { setRiskFilter(e.target.value as RiskLevel | "All"); setPage(0); }}
-            className="bg-secondary border border-border rounded-md px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-          >
-            <option value="All">All Risk</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-          </select>
-          <select
-            value={typeFilter}
-            onChange={(e) => { setTypeFilter(e.target.value as ClaimType | "All"); setPage(0); }}
-            className="bg-secondary border border-border rounded-md px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-          >
-            <option value="All">All Types</option>
-            <option value="Auto">Auto</option>
-            <option value="Property">Property</option>
-            <option value="Health">Health</option>
-            <option value="Life">Life</option>
-            <option value="Liability">Liability</option>
-          </select>
+          <Select value={riskFilter} onValueChange={(val) => { setRiskFilter(val as RiskLevel | "All"); setPage(0); }}>
+            <SelectTrigger className="w-[130px] bg-secondary border-border text-sm">
+              <SelectValue placeholder="All Risk" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="All">All Risk</SelectItem>
+              <SelectItem value="High">High</SelectItem>
+              <SelectItem value="Medium">Medium</SelectItem>
+              <SelectItem value="Low">Low</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select value={typeFilter} onValueChange={(val) => { setTypeFilter(val as ClaimType | "All"); setPage(0); }}>
+            <SelectTrigger className="w-[130px] bg-secondary border-border text-sm">
+              <SelectValue placeholder="All Types" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="All">All Types</SelectItem>
+              <SelectItem value="Auto">Auto</SelectItem>
+              <SelectItem value="Property">Property</SelectItem>
+              <SelectItem value="Health">Health</SelectItem>
+              <SelectItem value="Life">Life</SelectItem>
+              <SelectItem value="Liability">Liability</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
