@@ -72,7 +72,7 @@ export function ClaimDetailPanel({ claim, onClose }: ClaimDetailPanelProps) {
               <DetailRow
                 icon={FileText}
                 label="Amount"
-                value={`$${claim.amount.toLocaleString()}`}
+                value={`₹${claim.amount.toLocaleString('en-IN')}`}
               />
               <DetailRow
                 icon={Shield}
